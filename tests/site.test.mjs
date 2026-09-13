@@ -26,6 +26,11 @@ test('GitHub Pages の base path を内部リンクとアセットに反映す�
   assert.doesNotMatch(html, /href="\/stores\//);
 });
 
+test('ヒーローのメインコピーをデスクトップで途中改行しない', () => {
+  const html = page('index.html');
+  assert.match(html, /class="md:whitespace-nowrap">想いのある品を、次の誰かへ。<\/span><br>/);
+});
+
 test('問い合わせフォームは外部サービス未接続の表示に留める', () => {
   const html = page('contact/index.html');
   assert.match(html, /Formspree/);
