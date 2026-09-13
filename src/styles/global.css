@@ -9,3 +9,30 @@ body { color: #292524; background: #fffdf8; }
 a { transition: color 160ms ease, opacity 160ms ease; }
 a:hover { opacity: .72; }
 summary::-webkit-details-marker { display: none; }
+
+.consult-button {
+	position: relative;
+	display: grid;
+	aspect-ratio: 1;
+	width: 8.5rem;
+	place-items: center;
+	clip-path: polygon(50% 0%, 59% 23%, 79% 7%, 77% 31%, 100% 30%, 80% 45%, 98% 60%, 74% 61%, 78% 88%, 57% 72%, 46% 100%, 40% 75%, 17% 91%, 23% 65%, 0% 65%, 21% 48%, 3% 31%, 29% 33%, 29% 8%, 45% 25%);
+	background: linear-gradient(135deg, #fb7185, #e11d48 48%, #9f1239);
+	color: white;
+	font-weight: 800;
+	line-height: 1.35;
+	text-align: center;
+	text-shadow: 0 1px 2px rgb(76 5 25 / 55%);
+	filter: drop-shadow(0 10px 10px rgb(225 29 72 / 38%));
+	transition: transform 180ms ease, filter 180ms ease;
+}
+
+.consult-button::before {
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(circle at 34% 28%, rgb(255 255 255 / 90%) 0 2px, transparent 3px), radial-gradient(circle at 68% 42%, rgb(255 228 230 / 85%) 0 2px, transparent 3px);
+	content: '';
+}
+
+.consult-button span { position: relative; z-index: 1; }
+.consult-button:hover { opacity: 1; transform: rotate(-3deg) scale(1.07); filter: drop-shadow(0 13px 12px rgb(225 29 72 / 48%)); }

@@ -26,6 +26,13 @@ test('GitHub Pages の base path を内部リンクとアセットに反映す�
   assert.doesNotMatch(html, /href="\/stores\//);
 });
 
+test('トップの無料相談CTAを赤系の星形スタイルで表示する', () => {
+  const html = page('index.html');
+  assert.match(html, /class="consult-button"/);
+  assert.match(html, /無料で<br>相談する/);
+  assert.match(html, /href="\/sample\/contact\/"/);
+});
+
 test('問い合わせフォームは外部サービス未接続の表示に留める', () => {
   const html = page('contact/index.html');
   assert.match(html, /Formspree/);
