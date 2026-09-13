@@ -4,10 +4,10 @@ import { site } from '../data/site';
 ---
 
 <header class="sticky top-0 z-30 border-b border-stone-200 bg-white/95 backdrop-blur">
-	<div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-		<a href={link('/')} class="flex items-center gap-3" aria-label={`${site.name} トップ`}>
-			<span class="grid size-10 place-items-center rounded-full bg-emerald-800 text-lg text-white">つ</span>
-			<span class="leading-tight"><strong class="block text-sm tracking-[0.18em] text-emerald-950">{site.name}</strong><span class="text-xs text-stone-500">査定・相談無料</span></span>
+	<div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
+		<a href={link('/')} class="flex items-center gap-4" aria-label={`${site.name} トップ`}>
+			<span class="grid size-12 place-items-center rounded-full bg-emerald-800 text-xl text-white">つ</span>
+			<span class="leading-tight"><strong class="block text-base tracking-[0.16em] text-emerald-950 sm:text-lg">{site.name}</strong><span class="mt-1 block text-sm text-stone-500">査定・相談無料</span></span>
 		</a>
 		<nav class="hidden items-center gap-6 text-sm font-medium text-stone-700 lg:flex" aria-label="メインナビゲーション">
 			<a href={link('/stores/')}>店舗を探す</a><a href={link('/items/')}>買取品目</a><a href={link('/cases/')}>買取実績</a><a href={link('/faq/')}>よくある質問</a>

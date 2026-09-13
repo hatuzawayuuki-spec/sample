@@ -31,6 +31,13 @@ test('ヒーローのメインコピーをデスクトップで途中改行し�
   assert.match(html, /class="md:whitespace-nowrap">想いのある品を、次の誰かへ。<\/span><br>/);
 });
 
+test('ヘッダーのブランド表示を読みやすく大きくする', () => {
+  const html = page('index.html');
+  assert.match(html, /size-12 place-items-center rounded-full/);
+  assert.match(html, /text-base tracking-\[0\.16em\].*sm:text-lg/);
+  assert.match(html, /査定・相談無料/);
+});
+
 test('問い合わせフォームは外部サービス未接続の表示に留める', () => {
   const html = page('contact/index.html');
   assert.match(html, /Formspree/);
