@@ -39,6 +39,17 @@ test('ダミーであることを明示する', () => {
   assert.match(page('privacy/index.html'), /ダミー/);
 });
 
+test('品目詳細に該当品目の買取実績と参考価格を表示する', () => {
+  const brandPage = page('items/brand/index.html');
+  const watchPage = page('items/watch/index.html');
+  assert.match(brandPage, /ブランド品の買取実績/);
+  assert.match(brandPage, /エルメス バーキン30をお買取りしました/);
+  assert.match(brandPage, /参考価格 ¥1,280,000/);
+  assert.match(watchPage, /腕時計の買取実績/);
+  assert.match(watchPage, /ロレックス デイトジャストをお買取りしました/);
+  assert.match(watchPage, /参考価格 ¥650,000/);
+});
+
 test('全内部リンクはGitHub Pages配下の生成ページを指す', () => {
   for (const file of htmlFiles(dist.pathname)) {
     const html = readFileSync(file, 'utf8');
