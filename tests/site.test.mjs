@@ -40,6 +40,17 @@ test('トップページに金・貴金属の強化買取セクションを表�
   assert.match(html, /href="\/sample\/items\/gold\/"/);
 });
 
+test('状態にかかわらず相談できる買取セクションを表示する', () => {
+  const html = page('index.html');
+  assert.match(html, /CONDITION/);
+  assert.match(html, /こんな状態のお品物も、まずはご相談ください/);
+  assert.match(html, /切れたアクセサリー/);
+  assert.match(html, /傷・汚れのあるブランド品/);
+  assert.match(html, /動かない時計・カメラ/);
+  assert.match(html, /src="\/sample\/images\/condition-purchase\.png"/);
+  assert.match(html, /お買取りの可否・金額は/);
+});
+
 test('問い合わせフォームは外部サービス未接続の表示に留める', () => {
   const html = page('contact/index.html');
   assert.match(html, /Formspree/);
