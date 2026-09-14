@@ -31,6 +31,15 @@ test('ヒーローのメインコピーをデスクトップで途中改行し�
   assert.match(html, /class="md:whitespace-nowrap">想いのある品を、次の誰かへ。<\/span><br>/);
 });
 
+test('トップページに金・貴金属の強化買取セクションを表示する', () => {
+  const html = page('index.html');
+  assert.match(html, /GOLD &amp; PRECIOUS METALS/);
+  assert.match(html, /金・貴金属の/);
+  assert.match(html, /買取を強化中/);
+  assert.match(html, /src="\/sample\/images\/gold-purchase\.png"/);
+  assert.match(html, /href="\/sample\/items\/gold\/"/);
+});
+
 test('問い合わせフォームは外部サービス未接続の表示に留める', () => {
   const html = page('contact/index.html');
   assert.match(html, /Formspree/);
